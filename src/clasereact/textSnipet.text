@@ -1,0 +1,80 @@
+Desencadenar	Contenido
+rcc→	esqueleto de componente de clase
+rrc→	esqueleto de componente de clase con react-redux connect
+rrdc→	esqueleto de componente de clase con react-redux connect and dispatch
+rccp→	esqueleto de componente de clase con tipos de accesorios después de la clase
+rcjc→	esqueleto de componente de clase sin líneas de importación y exportación predeterminadas
+rcfc→	esqueleto de componente de clase que contiene todos los métodos de ciclo de vida
+rwwd→	componente de clase sin declaraciones de importación
+rpc→	esqueleto de componente puro de clase con tipos de accesorios después de la clase
+rsc→	esqueleto de componente sin estado
+rscp→	componente sin estado con esqueleto de tipos de accesorios
+rscm→	memorizar esqueleto de componente sin estado
+rscpm→	memorizar componente sin estado con esqueleto de tipos de accesorios
+rsf→	esqueleto de función nombrada sin estado
+rsfp→	función nombrada sin estado con esqueleto de tipos de accesorios
+rsi→	componente sin estado con tipos de accesorios y retorno implícito
+fcc→	componente de clase con esqueleto de tipos de flujo
+fsf→	esqueleto de función nombrada sin estado con esqueleto de tipos de flujo
+fsc→	componente sin estado con esqueleto de tipos de flujo
+rpt→	declaración propTypes vacía
+rdp→	declaración defaultProps vacía
+con→	constructor predeterminado de clase con accesorios
+conc→	constructor predeterminado de clase con accesorios y contexto
+est→	objeto de estado vacío
+cwm→	componentWillMount method
+cdm→	componentDidMount method
+cwr→	componentWillReceiveProps method
+scu→	shouldComponentUpdate method
+cwup→	componentWillUpdate method
+cdup→	componentDidUpdate method
+cwun→	componentWillUnmount method
+gsbu→	getSnapshotBeforeUpdate method
+gdsfp→	static getDerivedStateFromProps method
+cdc→	componentDidCatch method
+ren→	render method
+sst→	this.setState with object as parameter
+ssf→	this.setState with function as parameter
+props→	this.props
+state→	this.state
+bnd→	binds the this of method inside the constructor
+disp→	MapDispatchToProps redux function
+La siguiente tabla enumera todos los fragmentos que se pueden usar para los tipos de accesorios. Cada fragmento relacionado con los tipos de accesorios comienza con pt, por lo que es fácil agruparlos y explorar todas las opciones disponibles. Además de eso, cada fragmento de tipo prop tiene un equivalente cuando necesitamos declarar que esta propiedad también es necesaria.
+
+Por ejemplo ptacrea el PropTypes.arrayy ptarcrea elPropTypes.array.isRequired
+
+Desencadenar	Contenido
+pta→	PropTypes.array,
+ptar→	PropTypes.array.isRequired,
+ptb→	PropTypes.bool,
+ptbr→	PropTypes.bool.isRequired,
+ptf→	PropTypes.func,
+ptfr→	PropTypes.func.isRequired,
+ptn→	PropTypes.number,
+ptnr→	PropTypes.number.isRequired,
+pto→	PropTypes.object,
+ptor→	PropTypes.object.isRequired,
+pts→	PropTypes.string,
+ptsr→	PropTypes.string.isRequired,
+ptsm→	PropTypes.symbol,
+ptsmr→	PropTypes.symbol.isRequired,
+ptan→	PropTypes.any,
+ptanr→	PropTypes.any.isRequired,
+ptnd→	PropTypes.node,
+ptndr→	PropTypes.node.isRequired,
+ptel→	PropTypes.element,
+ptelr→	PropTypes.element.isRequired,
+pti→	PropTypes.instanceOf(ClassName),
+ptir→	PropTypes.instanceOf(ClassName).isRequired,
+pte→	PropTypes.oneOf(['News', 'Photos']),
+pter→	PropTypes.oneOf(['News', 'Photos']).isRequired,
+ptet→	PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+ptetr→	PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+ptao→	PropTypes.arrayOf(PropTypes.number),
+ptaor→	PropTypes.arrayOf(PropTypes.number).isRequired,
+ptoo→	PropTypes.objectOf(PropTypes.number),
+ptoor→	PropTypes.objectOf(PropTypes.number).isRequired,
+ptoos→	PropTypes.objectOf(PropTypes.shape()),
+ptoosr→	PropTypes.objectOf(PropTypes.shape()).isRequired,
+ptsh→	PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number}),
+ptshr→	PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number}).isRequired,

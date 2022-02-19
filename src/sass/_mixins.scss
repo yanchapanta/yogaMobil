@@ -1,0 +1,52 @@
+@import 'values';
+
+
+
+//MEDIA QUERYS
+@mixin phone {
+	@media only screen and (min-width: #{$phone}) {
+		@content;
+	}
+}
+@mixin phone-1 {
+	@media only screen and (min-width: #{$phone-1}) {
+		@content;
+	}
+}
+@mixin phone-2 {
+	@media only screen and (min-width: #{$phone-2}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media only screen and (min-width: #{$tablet}) {
+		@content;
+	}
+}
+@mixin tablet-1 {
+	@media only screen and (min-width: #{$tablet-1}) {
+		@content;
+	}
+}
+@mixin tablet-2 {
+	@media only screen and (min-width: #{$tablet-2}) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media only screen and (min-width: #{$desktop}) {
+		@content;
+	}
+}
+@mixin desktop-1 {
+	@media only screen and (min-width: #{$desktop-1}) {
+		@content;
+	}
+}
+@mixin desktop-2 {
+	@media only screen and (min-width: #{$desktop-2}) {
+		@content;
+	}
+}
+
