@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import './sass/styles.scss';
 
-import Home1 from './components/home-1';
+import Home2 from './components/Home2';
+import Home from './components/Home';
 
 function App() {
 	return (
 		<Fragment>
-			<Home1 />
-			mi imagen
+			<Home2 />	
+
+			{/* <Home />	 */}
 		</Fragment>
 	);
 }

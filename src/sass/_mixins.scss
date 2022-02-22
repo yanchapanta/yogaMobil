@@ -50,3 +50,80 @@
 	}
 }
 
+
+
+//texto
+
+
+@mixin  title-text {
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size:calc(48px + 1vw);
+	line-height: 72px;
+	color: $white-color;
+}
+@mixin  title-1-text {
+    font-family: $font-rowdies;
+    font-style: normal;
+    font-weight: normal;
+    font-size:calc(18px + 1vw);
+    line-height: 22px;
+    
+    color: $black-color;
+}
+//boton
+@mixin pagraph-yoga-text {
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size: calc(24px + 1vw);
+	line-height: 36px;
+}
+@mixin btn-signin-text {
+	font-family: $font-poppins;
+	padding: 1rem 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: calc(18px + 1vw);
+	line-height: 27px;
+	color: $white-color;
+}
+@mixin play-text{
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: calc(9px + 1vw);
+	line-height: 13px;
+	color:$black-color;
+}
+@mixin row-text{
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: calc(14px + 1vw);
+	colorr:$black-color;
+
+}
+@mixin card-title-text{
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: 600;
+
+	font-size: calc(14px + 1vw);
+	line-height: 21px;
+	color: $white-color;
+}
+@mixin card-min-text{
+	font-family: $font-poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: calc(9px + 1vw);
+	line-height: 13px;
+	color:$black-color;
+}
+//fondo
+@mixin background-1 {
+	background: $second-color;
+	box-shadow: $box-shadow-1;
+}

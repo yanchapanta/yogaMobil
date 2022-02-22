@@ -1,0 +1,106 @@
+@import 'values';
+@import 'mixins';
+//COMPONENTES SEPARADOS
+.container-1 {
+	padding: 1rem;
+	@include tablet(){
+		padding: 1rem 2rem;
+	}
+	@include desktop(){
+		padding: 1rem 3rem;
+	}
+}
+.size-icon {
+	width: 24px;
+	height: 24px;
+}
+//texto
+.title-text {
+	@include title-text;
+}
+.title-1-text {
+	@include title-1-text;
+}
+.title-1-light-text {
+	@include title-1-text;
+	font-weight: 300;
+}
+.play-text {
+	@include play-text;
+}
+.row-text {
+	@include row-text;
+}
+.card-title-text {
+	@include card-title-text;
+}
+.card-min-text {
+	@include card-min-text;
+}
+.pagraph-yoga-text {
+	@include pagraph-yoga-text;
+}
+//botones
+.btn-signin {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	gap: 1rem;
+
+	border: none;
+	outline: none;
+	@include background-1;
+	border-radius: 80px;
+	padding: 0rem 3rem;
+	opacity: 0.8;
+	span {
+		@include btn-signin-text;
+	}
+	img {
+		-webkit-perspective: 10rem;
+		        perspective: 10rem;
+		-webkit-transform-style: preserve-3d;
+		        transform-style: preserve-3d;
+		-webkit-transition: -webkit-transform 0.3s linear;
+		transition: -webkit-transform 0.3s linear;
+		-o-transition: transform 0.3s linear;
+		transition: transform 0.3s linear;
+		transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+	}
+	&:hover {
+		opacity: 1;
+		img {
+			-webkit-transform: rotateY(180deg);
+			        transform: rotateY(180deg);
+		}
+	}
+}
+
+.hover {
+	cursor: pointer;
+	opacity: 0.8;
+	&:hover {
+		opacity: 1;
+	}
+}
+//fondo
+.gb-blue{
+	background-color: $background-azul;
+	
+}
+.gb-pinking{
+	background-image: linear-gradient(125.95deg, #FFCAB3 5.32%, #71361C 92.27%);
+}
+.gb-pinking{
+	background-image: linear-gradient(125.95deg, #FFCAB3 5.32%, #71361C 92.27%);
+}

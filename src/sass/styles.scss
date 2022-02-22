@@ -1,5 +1,8 @@
 @import '_values.scss';
 @import "mixins";
 @import 'general';
-@import 'utilities';
-@import 'home-1.scss';
+@import 'home.scss';
+
+
+// siempre al ultimol
+@import 'utilities.scss';
