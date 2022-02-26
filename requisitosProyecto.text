@@ -1,0 +1,22 @@
+como nuevo proyecto haz este. Las condiciones de desarrollo son las siguientes: 
+
+- Se te dará un diseño para mobile pero tienes que hacerlo visible 
+también para deskop y se debe ver bien en tablet también. 
+
+- el menú está en la parte inferior en mobile, debe ser mostrata en un 
+popup en tablet y en el header en desktop. 
+
+- tienes la opción de dark mode. se debe mostrar automátcamente cuando sea de noche desde 
+las 6pm hasta las 4:30 am.
+ también está el botón para cambiar que debe funcionar para elección manual 
+
+- El diseño está incompleto por lo que debes de completarlo con las siguientes páginas como
+ mínimo: Página de registro de un nuevo horario o segmento, 
+página para iniciar y finalizar el contador y página para listar los contadores, 
+si quieres agregar más páginas se tomará mucho en cuenta. 
+
+- La aplicación debe ser funcional, por lo menos debe guardarse la información dentro 
+del navegador. 
+-Documentar todo, desde cómo organizas la variables hasta qué hace cada bloque de códgo.
+ Solo documentación importante. 
+ - Tienes un mes como máximo para terminarlo. 

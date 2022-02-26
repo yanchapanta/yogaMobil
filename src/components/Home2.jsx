@@ -47,11 +47,11 @@ function Home2() {
 			</div>
 
 			<div className="container-1">
-				{/* titulo */}
-				<div className="col d-flex justify-content-between container-1">
-					<p className="row-text pt-1 pb-1">Popular</p>
-					<p className="row-text pt-1 pb-1">See All</p>
-				</div>
+					{/* titulo */}
+					<div className="col d-flex justify-content-between container-1">
+						<p className="row-text pt-1 pb-1">Popular</p>
+						<p className="row-text pt-1 pb-1">See All</p>
+					</div>
 				{/* targetas popular*/}
 				<div className="row cards container-1">
 					<div className="card" style={{'--imgCard':'url("'+images.sleeping+'")'}}>

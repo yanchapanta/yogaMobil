@@ -1,10 +1,13 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import images from '../assets/img/image';
+import Login from './Login';
 
-class Home extends Component {
-	render() {
-		return (
-			<Fragment>
+function Home() {
+	// const [modelogin, setModelogin] = useState(true);
+	return (
+		<Fragment>
+			<div>
 				<div className="home container-1">
 					<div className="yoga-info">
 						<h1 className="title-text">Yoga</h1>
@@ -14,14 +17,14 @@ class Home extends Component {
 
 						<p className="pagraph-yoga-text">Start with Fresh Morning!</p>
 					</div>
-					<button className="btn-signin hover">
+					<Link to="/login" className="btn-signin hover">
 						<span>Sign In</span>
 						<img src={images.arrowRight} alt="signin" />
-					</button>
+					</Link>
 				</div>
-			</Fragment>
-		);
-	}
+			</div>
+		</Fragment>
+	);
 }
 
 export default Home;

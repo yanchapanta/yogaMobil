@@ -80,7 +80,7 @@
 }
 //targetas
 
-.cards{
+.row.cards, .cards{
 	display: grid;
 	grid-template-columns: repeat(2, minmax(min-content, 159px));
     grid-template-rows: minmax(min-content, 181px);
@@ -94,6 +94,7 @@
 	@include desktop(){
 		grid-template-columns: repeat(2, minmax(min-content, 438px));
 		grid-template-rows: minmax(min-content, 370px);
+		grid-auto-rows: minmax(min-content, 370px);
 		gap: 3rem;
 	}
 }

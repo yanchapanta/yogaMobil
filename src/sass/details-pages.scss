@@ -1,0 +1,12 @@
+.row.sleep-time-image{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(min-content, 100%));
+    grid-auto-rows: minmax(min-content, 50vw);
+    gap: 1rem;
+    
+}
+.row.cards.targes-peoplelikes{
+    @include tablet(){
+        grid-template-columns: repeat(3, minmax(min-content, 355px));
+    }
+}

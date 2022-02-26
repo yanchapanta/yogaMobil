@@ -14,12 +14,19 @@
 	width: 24px;
 	height: 24px;
 }
+.size-1-icon {
+	width: 107px;
+    height: 68px;
+}
 //texto
 .title-text {
 	@include title-text;
 }
 .title-1-text {
 	@include title-1-text;
+}
+.title-2-text {
+	@include title-2-text;
 }
 .title-1-light-text {
 	@include title-1-text;
@@ -94,7 +101,7 @@
 	}
 }
 //fondo
-.gb-blue{
+.card.gb-blue,.gb-blue{
 	background-color: $background-azul;
 	
 }

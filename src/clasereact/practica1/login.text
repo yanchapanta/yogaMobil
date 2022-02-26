@@ -1,0 +1,37 @@
+import React, { Fragment } from 'react';
+import { BrowserRouter as Routes, Switch, Route, Link } from 'react-router-dom';
+import './sass/styles.scss';
+import Usuarios from './clasereact/compolink/Usuarios';
+import Usuario from './clasereact/compolink/Usuario';
+
+// import TimeRecords from './components/TimeRecords';
+// import ListadoNombres from './clasereact/componentes/ListadoNombres';
+// import DetailsPage from './components/DetailsPages';
+// import Home2 from './components/Home2';
+// import Home from './components/Home';
+
+function App() {
+	return (
+		<Fragment>
+			{/* <TimeRecords/> */}
+			{/* <ListadoNombres/> */}
+			{/* <DetailsPage/> */}
+			{/* <Home2 />	 */}
+			{/* <Home />	 */}
+			<Routes>
+				<Link to="/">Usuarios</Link>
+				<Switch>
+					{/* si no exact no genera las rutas */}
+					<Route exact path="/">
+						<Usuarios />
+					</Route>
+					<Route  path="/usuario/:id">
+						<Usuario />
+					</Route>
+				</Switch>
+			</Routes>
+		</Fragment>
+	);
+}
+
+export default App;
