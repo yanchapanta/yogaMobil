@@ -1,0 +1,35 @@
+//variables para media query
+$phone: 18.75em; //300px;
+$phone-1: 400px; //400px;
+$phone-2: 500px; //500px;
+
+$tablet: 37.5em; //600px;
+$tablet-1: 700px; //700px;
+$tablet-2: 800px; //800px; 
+ 
+$desktop: 64em; //1024px;
+$desktop-1: 75em; //1200px;
+$desktop-2: 81.25em; //1300px;
+
+
+//variables de colores
+$second-color:var(--second-color);
+$gradient-1-color:var(--gradient-1-color);
+$black-color:var(--black-color);
+$gray-color:var(--gray-color);
+$gray-alpha-color:var(--gray-alpha-color);
+$green-alpha-color:var(--green-alpha-color);
+$green-hover-color:var(--green-hover-color);
+$green-hover2-color:var(--green-hover2-color);
+$blue-hover-color:var(--blue-hover-color);
+$white-color:var(--white-color);
+
+//variables de fuentes de letras
+$font-poppins:var(--font-poppins);
+$font-rowdies:var(--font-rowdies);
+//variables de box shadow
+$box-shadow-1:var(--box-shadow-1);		
+$box-shadow2:var(--box-shadow2);
+$linear-gradient-rosa:var(--linear-gradient-rosa);
+$background-azul:var(--background-azul);
+

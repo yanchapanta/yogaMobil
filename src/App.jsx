@@ -1,32 +1,26 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Routes, Switch, Route } from 'react-router-dom';
-import './sass/styles.scss';
-import Login from './components/Login';
-import Home from './components/Home';
-import Home2 from './components/Home2';
-import PasswordRecovery1 from './components/PasswordRecovery1';
+// import Login from './pages/Login/Login';
+import Interfaz from './pages/Interfaz';
+import Login from './pages/Login/Login';
+import  { BrowserRouter as Routes, Route } from 'react-router-dom';
+
 
 function App() {
-	return (
-		<Fragment>
-			<Routes>
-				<Switch>
-					<Route exact path="/">
-						<Home />
+		return <Fragment>
+			
+				<Routes>
+					<Route exact path='/'>		
+						<Interfaz/>
 					</Route>
-					<Route path="/login">
-						<Login />
+					<Route exact path='/login'>		
+						<Login/>
 					</Route>
-					<Route path="/home">
-						<Home2 />
-					</Route>
-					<Route path="/PasswordRecovery1">
-						<PasswordRecovery1 />
-					</Route>
-				</Switch>
-			</Routes>
+				</Routes>
+		
+
 		</Fragment>
-	);
+		
+	
 }
 
 export default App;

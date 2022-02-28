@@ -1,0 +1,32 @@
+.input-container {
+	width: 100%;
+}
+%ragular-style {
+	width: 100%;
+	height: 100%;
+	border-radius: 25px;
+	border: none;
+	padding: 0 10px 0 20px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	color: cadetblue;
+	font-size: 14px;
+	outline: none;
+}
+.ragular-style {
+	@extend %ragular-style;
+}
+.ragular-style::placeholder {
+	font-size: 140x;
+	color: gray;
+	opacity: 0.8;
+}
+.input-error {
+	@extend %ragular-style;
+	border: 1px solid red;
+	color: red;
+	background-color: rosybrown;
+}
+.input-error::placeholder {
+	color: red;
+}

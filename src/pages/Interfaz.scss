@@ -1,0 +1,37 @@
+@import './sass/values';
+@import './sass/mixins';
+.home {
+	background-image: var(--gradient-1-color);
+
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.header-image-container {
+	width: inherit;
+}
+
+.yoga-info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.yoga-image {
+	width: 100%;
+	height: 350px;
+	// border: 1px solid red;
+	@include phone-1() {
+		width: 404px;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+.pagraph-yoga-text {
+	@include pagraph-yoga-text;
+}
