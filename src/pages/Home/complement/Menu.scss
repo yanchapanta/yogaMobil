@@ -1,0 +1,21 @@
+.menu-phone{
+    width: 100%;
+    z-index: 996;
+    bottom: 0;
+    position: fixed;
+    
+}
+.menu-phone-content{
+    width: inherit;
+    background: #E49877;
+    backdrop-filter: blur(3.80488px);    
+    border-radius: 38.0488px;   
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu-phone-img{
+    padding: 1rem;
+
+}

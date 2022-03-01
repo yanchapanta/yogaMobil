@@ -14,8 +14,17 @@ import face from './target/face.svg';
 import phone from './target/phone.svg';
 import battle from './target/battle.svg';
 import ungaro from './target/ungaro.svg';
+// icono menu phone
+import menuHome from './menu/home.svg';
+import menuNotification from './menu/Notification.svg';
+import menuPlayBold from './menu/playBold.svg';
+import menuSearch from './menu/search.svg';
 
 const images = {
+	menuHome: menuHome,
+	menuNotification: menuNotification,
+	menuPlayBold: menuPlayBold,
+	menuSearch: menuSearch,
 	rainbow: rainbow,
 	face: face,
 	phone: phone,
