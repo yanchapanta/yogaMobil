@@ -3,12 +3,12 @@ import '../sass/utilities.scss';
 import './Home.scss';
 import React, { Fragment } from 'react';
 import images from '../../assets/img/image';
-import Menu from './complement/Menu';
+import MenuPhone from './complement/Menu/Menu';
 
 function Home() {
 	return (
 		<Fragment>
-			<Menu/>
+			<MenuPhone/>
 
 			<div className="header-image container-1">
 				<div className="header-image-container">

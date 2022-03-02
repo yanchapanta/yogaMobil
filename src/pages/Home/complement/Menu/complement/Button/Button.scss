@@ -1,0 +1,56 @@
+@import '../../../../../sass/values';
+%btn-signin2{
+    font-family: $font-poppins;
+    cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	user-select: none;
+	background-color: hsla(0, 0%, 0%, 0);
+	border: 1px solid hsla(0, 0%, 0%, 0);
+	padding: 0.175rem 0.75rem;
+	font-size: 1rem;
+	border-radius: 1rem;
+    color: hsl(210, 20%, 98%);
+    border-color: hsl(210, 20%, 98%);
+    
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-signin2 {
+	@extend %btn-signin2;
+    &:hover{
+        color: hsl(0, 0%, 0%);
+        background-color: hsl(210, 20%, 98%);
+        border-color: hsl(210, 20%, 98%);
+    }
+}
+.btn-signup{
+    @extend %btn-signin2;
+    color: hsl(0, 0%, 0%);
+    background-color: hsl(190, 90%, 50%);
+    border-color: hsl(190, 90%, 50%);
+    &:hover{
+        color: hsl(0, 0%, 0%);
+    background-color: hsl(190, 88%, 57%);
+    border-color: hsl(190, 89%, 55%);
+    }
+
+}
+.btn-links{
+    @extend %btn-signin2;
+    color: hsl(0, 0%, 0%);
+    background-color: hsl(190, 90%, 50%);
+    border-color: hsl(190, 90%, 50%);
+    &:hover{
+        color: hsl(0, 0%, 0%);
+    background-color: hsl(190, 88%, 57%);
+    border-color: hsl(190, 89%, 55%);
+    }
+
+}
