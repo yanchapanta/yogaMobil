@@ -1,46 +1,18 @@
-import React, { Fragment, useState } from 'react';
-
-// import Home2 from './Home2';
-
+import './Login.scss';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-
-function Login() {
-	//simulacion de boton
-	const [modelogin, setModelogin] = useState(true);
-
-	//entrada de formulario
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [error, setError] = useState(null);
-
-
-	const validateForm = (e) => {
-		e.preventDefault();
-
-		if (!email.trim('') && email !== 'marco@gmail.com') {
-			setError('* Valores invalidos en gmail');
-			return;
-		}
-
-		if (!password.trim('') && password !== '123') {
-			setError('* Valores invalidos en password');
-			return;
-		}
-		if (email === 'marco@gmail.com' && password === '123') {
-			setModelogin(false);
-		} else {
-			setError('* email o password no son correctos!');
-		}		
-	};
+function Login({error,setEmail,setPassword,validateForm}) {
+	
+		
 
 	return (
 		<Fragment>
-		
-					{/* // formulario login */}
+			
+				 {/* // formulario login */}
 					<div className="row d-flex justify-content-center mt-5">
 						<div className="col col-md-5 ">
-							<form
+							<form 
 								onSubmit={(e) => {
 									validateForm(e);
 								}}
@@ -53,9 +25,10 @@ function Login() {
 									<input
 										onChange={(e) => setEmail(e.target.value)}
 										type="email"
-										className="form-control"
+										className="form-control form-input"
 										id="exampleInputEmail1"
 										aria-describedby="emailHelp"
+										
 									/>
 								</div>
 								<div className="mb-3">
@@ -65,13 +38,14 @@ function Login() {
 									<input
 										onChange={(e) => setPassword(e.target.value)}
 										type="password"
-										className="form-control"
+										className="form-control form-input"
 										id="exampleInputPassword1"
+										
 									/>
 								</div>
 								<input
 								
-									className=" btn btn-outline-primary btn-block d-block"
+									className=" btn btn-outline-primary btn-block d-block form-Submit"
 									type="submit"
 									style={{ width: '100%' }}
 									value='Log in'
@@ -79,7 +53,7 @@ function Login() {
 								/> 
 		
 								
-								<Link to="/PasswordRecovery1" type="button" class="btn btn-link">
+								<Link to="/password-recovery" type="button" class="btn btn-link btn-linkss ">
 									Olvidé mi contraseña
 								</Link>
 							</form>
@@ -91,8 +65,7 @@ function Login() {
 						</div>
 					</div>
 
-			
-			}
+		
 		
 		</Fragment>
 	);

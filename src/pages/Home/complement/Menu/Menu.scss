@@ -96,3 +96,36 @@
 		gap: 0.5rem;
 	}
 }
+
+// boton tema usuario y boton usuario perfil
+.primary-nav{
+	 &:hover{
+		.primary-nav-user{			
+			display: flex;
+		}
+	 }
+}
+.primary-nav-user{
+	display: none;
+	flex-direction: column;
+	
+	right: 0;
+	position: absolute;
+	padding: 0;
+	padding-top: 1rem;
+	
+	
+	
+}
+.primary-nav-caja{
+	border-radius: 10px;
+	border:1px solid var(--gray-color);
+	display: flex;
+	flex-direction: column;
+	span{
+		text-decoration: none;
+		padding: 0 1rem;
+	
+	}
+	
+}

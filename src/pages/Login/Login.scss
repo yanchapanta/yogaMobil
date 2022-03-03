@@ -1,0 +1,13 @@
+.form-control.form-input{
+    border-radius: 1rem;
+}
+input.form-Submit{
+    border-radius: 1rem;   
+}
+.btn.btn-link.btn-linkss{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        font-weight:500;
+    }
+}
