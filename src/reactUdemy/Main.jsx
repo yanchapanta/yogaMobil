@@ -1,11 +1,14 @@
 import React from 'react';
-import './clase/01Introduccion'
+//no es necesaio poner el /index
+import Search from './demoApp/demoApp';
+//import Search from './views/Search';
 
 const Main = () => {
 	return (
 		<div>
 			Main
-			<div id="otherRoot"></div>
+			{/* <Search /> */}
+			{/* <Search /> */}
 		</div>
 	);
 };

@@ -1,27 +1,41 @@
-import './Login.scss';
 import React, { Fragment, useState } from 'react';
-import Label from './component/Label/Label';
-import Input from './component/Input/Input';
-import Title from './component/Title/Title';
-import LinkUrl from './component/LinkUrl/LinkUrl';
-import { useParams } from 'react-router-dom';
-
-function Login({ error, setEmail, setPassword, validateForm }) {
-	const { validate } = useParams();
-	console.log(' validate', typeof validate);
-
+import Title from '../Login/component/Title/Title';
+import Label from '../Login/component/Label/Label';
+import Input from '../Login/component/Input/Input';
+import LinkUrl from '../Login/component/LinkUrl/LinkUrl'
+const Register = () => {
+	const [error, setError] = useState('');
+	const [email, setEmail] = useState('');
+	const validateForm = () => {};
 	return (
 		<Fragment>
 			{/* // formulario login */}
 			<div className="row d-flex justify-content-center mt-5">
 				<div className="col col-md-5 ">
-					<Title text="Login" />
+					<Title text="Register user" />
+					
 					<form
 						onSubmit={(e) => {
 							validateForm(e);
 						}}
 						className="p-3"
 					>
+						<div className="mb-3 ">
+							<Label
+								text="Name"
+								for="exampleInputEmail1"
+								className="form-label"
+							/>
+							<Input
+								attribute={{
+									type: 'text',
+									className: 'form-control form-input',
+									id: 'exampleInputEmail1',
+									ariadescribedby: 'emailHelp'
+								}}
+								onChange={setEmail}
+							/>
+						</div>
 						<div className="mb-3 ">
 							<Label
 								text="Email address"
@@ -38,13 +52,12 @@ function Login({ error, setEmail, setPassword, validateForm }) {
 								onChange={setEmail}
 							/>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 ">
 							<Label
 								text="Password"
 								for="exampleInputEmail1"
 								className="form-label"
 							/>
-
 							<Input
 								attribute={{
 									type: 'password',
@@ -52,37 +65,21 @@ function Login({ error, setEmail, setPassword, validateForm }) {
 									id: 'exampleInputEmail1',
 									ariadescribedby: 'emailHelp'
 								}}
-								onChange={setPassword}
+								onChange={setEmail}
 							/>
 						</div>
-						{/* {validate == 'true' ? (
-							<LinkUrl
-								attribute={{
-									text: 'Submit a',
-									to: '/',
-									type: 'button',
-									class:
-										' btn btn-outline-primary btn-block d-block form-Submit'
-								}}
-							/>
-						) : (
-							<input
-								className=" btn btn-outline-primary btn-block d-block form-Submit"
-								type="submit"
-								style={{ width: '100%' }}
-								value="Log in home"
-							/>
-						)} */}
+
 						<input
 							className=" btn btn-outline-primary btn-block d-block form-Submit"
 							type="submit"
 							style={{ width: '100%' }}
-							value="Log in home"
+							value="Register"
 						/>
+
 						<LinkUrl
 							attribute={{
-								text: 'Olvidé mi contraseña',
-								to: '/password-recovery',
+								text: 'Back to log in',
+								to: '/',
 								type: 'button',
 								class: ' btn-link btn-linkss '
 							}}
@@ -97,6 +94,6 @@ function Login({ error, setEmail, setPassword, validateForm }) {
 			</div>
 		</Fragment>
 	);
-}
+};
 
-export default Login;
+export default Register;

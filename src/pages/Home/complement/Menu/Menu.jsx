@@ -2,7 +2,7 @@ import React from 'react';
 import './Menu.scss';
 import images from '../../../../assets/img/image';
 import Icon  from  './complement/Icon/Icon';
-import Button  from  './complement/Button/Button';
+import { Link } from 'react-router-dom';
 
 
 const Menu = ({setClicklogin,setClicksignup,clicksignup}) => {
@@ -27,11 +27,11 @@ const Menu = ({setClicklogin,setClicksignup,clicksignup}) => {
                     <input id='search' className="mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
               </div>
               {
-                clicksignup?(
+                !clicksignup?(
                   //boton de ingresar y de registro
                   <div className='menu-desktop-row'>
                     <button onClick={(e)=> setClicklogin(true)} className='btn-signin2  hover d-none d-md-flex '>Log in </button>
-                    <button onClick={(e)=> setClicksignup(true)} className='btn-signup  hover d-none d-md-flex '>Sign up</button>                
+                    <Link to='/register' className='btn-signup  hover d-none d-md-flex '>Sign up</Link>                
                   </div>  
 
                 ):(
@@ -54,7 +54,7 @@ const Menu = ({setClicklogin,setClicksignup,clicksignup}) => {
 												/>
                         <nav className='primary-nav-user'>
                           <div className='primary-nav-caja'>
-                            <span onClick={(e)=> setClicksignup(true)}>Sign out</span>                       
+                            <span onClick={(e)=> setClicksignup(false)}>Sign out</span>                       
 
                           </div>
                         </nav>

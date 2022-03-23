@@ -1,0 +1,13 @@
+@import '../../../sass/general.scss';
+.title-text{
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    text-align: center;
+    
+    color: var(--black-color);
+}

@@ -1,0 +1,37 @@
+import React, { useState, Fragment } from 'react';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+
+import { DateRangePicker } from 'react-dates';
+
+// console.log(new Date())
+const Date = () => {
+	// <h2>It is {new Date().toLocaleTimeString()}.</h2>
+	// const [value,onchange]=useState(new Date())
+	// const fecha=new Date().toLocaleTimeString()
+	// console.log(fecha);
+	const [startDate, setStartDate] = useState(null);
+	const [endDate, setEndDate] = useState(null);
+	const [focusedInput, setFocusedInput] = useState(null);
+
+
+	return (
+		<Fragment>
+			<h2>It is .{}</h2>
+			<DateRangePicker
+				startDateId="startDate"
+				endDateId="endDate"
+				startDate={startDate}
+				endDate={endDate}
+				onDatesChange={({ startDate, endDate }) => {
+					setStartDate(startDate);
+					setEndDate(endDate);
+				}}
+				focusedInput={focusedInput}
+				onFocusChange={(focusedInput) => setFocusedInput(focusedInput)}
+			/>
+		</Fragment>
+	);
+};
+
+export default Date;
