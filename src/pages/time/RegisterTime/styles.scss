@@ -1,0 +1,34 @@
+.time {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.time-container {
+	width: 100%;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.time-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+//listado
+ul.list-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+li.list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

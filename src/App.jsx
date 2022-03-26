@@ -10,13 +10,20 @@ import Home from './pages/Home/Home';
 import PasswordRecovery from './pages/PasswordRecovery/PasswordRecovery';
 
 import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import RegisterTime from './pages/time/RegisterTime';
 // import Interfaz from './pages/Interfaz';
 import Main from './reactUdemy/Main';
-import { add } from 'date-fns';
-
+const useStateLocalStorage = (localStorageKkey) => {
+	const [value, setValue] = useState(
+		localStorage.getItem(localStorageKkey) || ''
+	);
+	useEffect(() => {
+		localStorage.setItem(localStorageKkey, value);
+	}, [value]);
+	return [value, setValue];
+};
 function App() {
-	//simulacion de boton
+	//LOGIN
 
 	const [modelogin, setModelogin] = useState(false);
 	const [clicklogin, setClicklogin] = useState(false);
@@ -24,10 +31,16 @@ function App() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(null);
-	// const [isHours, setIsHours] = useState('');
-	// const [isMinute, setIsMinute] = useState('');
+	const [minOn, setMinOn] = useState(false);
+	//entrada color tema
+	// const [valueStart, setValueStart] = useStateLocalStorage('myValueStart');
+	// const onChangeStart = (eve) => {
+	// 	setValueStart(eve.target.value);
+	// };
+	// const [listColorTeme, setListColorTeme] = useState([]);
 
 	let date = new DateObject();
+	const [id, setId] = useState('');
 	// console.log(date.format("YYYY/MM/DD hh:mm:ss.SSS a"));
 	const [isHoursfull, setIsHoursFull] = useState(date.format('HH:mm:ss'));
 
@@ -57,7 +70,7 @@ function App() {
 	const validateColor = () => {
 		console.log('as click today');
 	};
-
+	//HORA NOCHE DIA
 	//Validar Hora
 	const validateHours = () => {
 		let hours = new Date().getHours();
@@ -74,14 +87,13 @@ function App() {
 		setInterval(() => {
 			date = new DateObject();
 			setIsHoursFull(date.format('HH:mm:ss'));
-			// setIsMinute(new Date().getMinutes());
-			// setIsHours(new Date().getHours());
 		}, 1000);
 		return validateHours;
 	}, []);
 	const objetColor = [
 		{
 			id: '01',
+			weekday: 'monday',
 			startHours: 15,
 			startMinutes: 2,
 			endHours: 15,
@@ -90,6 +102,7 @@ function App() {
 		},
 		{
 			id: '02',
+			weekday: 'tuesday',
 			startHours: 15,
 			startMinutes: 2,
 			endHours: 15,
@@ -98,6 +111,43 @@ function App() {
 		},
 		{
 			id: '03',
+			weekday: 'wednesday',
+			startHours: 15,
+			startMinutes: 2,
+			endHours: 15,
+			endMinutes: 37,
+			color: 'green'
+		},
+		{
+			id: '04',
+			weekday: 'thursday',
+			startHours: 15,
+			startMinutes: 2,
+			endHours: 15,
+			endMinutes: 37,
+			color: 'green'
+		},
+		{
+			id: '05',
+			weekday: 'friday',
+			startHours: 10,
+			startMinutes: 30,
+			endHours: 4,
+			endMinutes: 30,
+			color: 'var(--second-background)'
+		},
+		{
+			id: '06',
+			weekday: 'saturday',
+			startHours: 8,
+			startMinutes: 15,
+			endHours: 15,
+			endMinutes: 30,
+			color: 'var(--second-background)'
+		},
+		{
+			id: '07',
+			weekday: 'sunday',
 			startHours: 15,
 			startMinutes: 2,
 			endHours: 15,
@@ -105,29 +155,54 @@ function App() {
 			color: 'var(--second-background)'
 		}
 	];
-	const addColor = () => {
-		// console.log(objetColor[0].color);
-		let color = '';
+	// console.log(minOn);
 
-		let hours = new Date().getHours();
-		let minute = new Date().getMinutes();
-		let idColor = '03';
-		let colorChoose = objetColor.filter((item) => item.id === idColor);
-		console.log(colorChoose[0].color);
-		if (
-			hours >= colorChoose[0].startHours &&
-			minute >= colorChoose[0].startMinutes &&
-			hours <= colorChoose[0].endHours &&
-			minute <= colorChoose[0].endMinutes
-		) {
-			color = colorChoose[0].color;
+	const handleColor = () => {
+		try {
+			// console.log(objetColor[0].color);
+			let color = '';
+
+			let hours = new Date().getHours();
+			let minute = new Date().getMinutes();
+			let day = new DateObject().weekDay.name; //string
+			day = day.toLowerCase();
+			let idColor = '06';
+			//dia actual
+			let dayT = 'saturday';
+			// 10:30 a 21:30
+
+			let colorChoose = objetColor.filter((item) => item.id === idColor);
+			let weekday = colorChoose[0].weekday;
+			let startHours = colorChoose[0].startHours;
+			let startMinutes = colorChoose[0].startMinutes;
+			let endHours = colorChoose[0].endHours;
+			let endMinutes = colorChoose[0].endMinutes;
+			if (dayT === weekday) {
+				if (hours === startHours && minute > startMinutes) {
+					setMinOn(true);
+				}
+				if ((startHours <= hours || hours <= endHours) && minOn === true) {
+					color = colorChoose[0].color;
+				}
+				if (hours === endHours && minute >= endMinutes) {
+					setMinOn(false);
+				}
+			}
+			return color;
+		} catch (error) {
+			console.log(error);
 		}
-		return color;
 	};
 	return (
 		<Fragment>
 			<Main />
-			<div className={validateHours() + ' '} style={{ background: addColor() }}>
+			{
+				// localStorage.getItem()
+			}
+			<div
+				className={validateHours() + ' '}
+				style={{ background: handleColor() }}
+			>
 				<div>
 					<h1>Hello, world! {isHoursfull}</h1>
 				</div>
@@ -169,8 +244,8 @@ function App() {
 					<Route path="/password-recovery">
 						<PasswordRecovery setClicklogin={setClicklogin} />
 					</Route>
-					<Route path="/register">
-						<Register />
+					<Route path="/register-time">
+						<RegisterTime id={id} setId={setId} />
 					</Route>
 				</Routes>
 			</div>
