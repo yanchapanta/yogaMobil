@@ -13,15 +13,7 @@ import Login from './pages/Login/Login';
 import RegisterTime from './pages/time/RegisterTime';
 // import Interfaz from './pages/Interfaz';
 import Main from './reactUdemy/Main';
-const useStateLocalStorage = (localStorageKkey) => {
-	const [value, setValue] = useState(
-		localStorage.getItem(localStorageKkey) || ''
-	);
-	useEffect(() => {
-		localStorage.setItem(localStorageKkey, value);
-	}, [value]);
-	return [value, setValue];
-};
+
 function App() {
 	//LOGIN
 
@@ -33,14 +25,8 @@ function App() {
 	const [error, setError] = useState(null);
 	const [minOn, setMinOn] = useState(false);
 	//entrada color tema
-	// const [valueStart, setValueStart] = useStateLocalStorage('myValueStart');
-	// const onChangeStart = (eve) => {
-	// 	setValueStart(eve.target.value);
-	// };
-	// const [listColorTeme, setListColorTeme] = useState([]);
-
+	const [listColorTeme, setListColorTeme] = useState([]);
 	let date = new DateObject();
-	const [id, setId] = useState('');
 	// console.log(date.format("YYYY/MM/DD hh:mm:ss.SSS a"));
 	const [isHoursfull, setIsHoursFull] = useState(date.format('HH:mm:ss'));
 
@@ -67,9 +53,7 @@ function App() {
 		}
 	};
 
-	const validateColor = () => {
-		console.log('as click today');
-	};
+	const validateColor = () => {};
 	//HORA NOCHE DIA
 	//Validar Hora
 	const validateHours = () => {
@@ -139,10 +123,10 @@ function App() {
 		{
 			id: '06',
 			weekday: 'saturday',
-			startHours: 8,
-			startMinutes: 15,
-			endHours: 15,
-			endMinutes: 30,
+			startHours: 4,
+			startMinutes: 2,
+			endHours: 14,
+			endMinutes: 50,
 			color: 'var(--second-background)'
 		},
 		{
@@ -156,49 +140,42 @@ function App() {
 		}
 	];
 	// console.log(minOn);
-
 	const handleColor = () => {
-		try {
-			// console.log(objetColor[0].color);
-			let color = '';
+		// console.log(objetColor[0].color);
+		let color = '';
 
-			let hours = new Date().getHours();
-			let minute = new Date().getMinutes();
-			let day = new DateObject().weekDay.name; //string
-			day = day.toLowerCase();
-			let idColor = '06';
-			//dia actual
-			let dayT = 'saturday';
-			// 10:30 a 21:30
+		let hours = new Date().getHours();
+		let minute = new Date().getMinutes();
+		let day = new DateObject().weekDay.name; //string
+		day = day.toLowerCase();
+		let idColor = '06';
+		//dia actual
+		let dayT = 'friday';
+		// 10:30 a 21:30
 
-			let colorChoose = objetColor.filter((item) => item.id === idColor);
-			let weekday = colorChoose[0].weekday;
-			let startHours = colorChoose[0].startHours;
-			let startMinutes = colorChoose[0].startMinutes;
-			let endHours = colorChoose[0].endHours;
-			let endMinutes = colorChoose[0].endMinutes;
-			if (dayT === weekday) {
-				if (hours === startHours && minute > startMinutes) {
-					setMinOn(true);
-				}
-				if ((startHours <= hours || hours <= endHours) && minOn === true) {
-					color = colorChoose[0].color;
-				}
+		let colorChoose = objetColor.filter((item) => item.id === idColor);
+		let weekday = colorChoose[0].weekday;
+		let startHours = colorChoose[0].startHours;
+		let startMinutes = colorChoose[0].startMinutes;
+		let endHours = colorChoose[0].endHours;
+		let endMinutes = colorChoose[0].endMinutes;
+		if (dayT === weekday) {
+			if (hours === startHours && minute > startMinutes) {
+				setMinOn(true);
+			}
+			if ((startHours <= hours || hours <= endHours) && minOn === true) {
+				color = colorChoose[0].color;
+
 				if (hours === endHours && minute >= endMinutes) {
 					setMinOn(false);
 				}
 			}
-			return color;
-		} catch (error) {
-			console.log(error);
 		}
+		return color;
 	};
 	return (
 		<Fragment>
 			<Main />
-			{
-				// localStorage.getItem()
-			}
 			<div
 				className={validateHours() + ' '}
 				style={{ background: handleColor() }}
@@ -245,7 +222,10 @@ function App() {
 						<PasswordRecovery setClicklogin={setClicklogin} />
 					</Route>
 					<Route path="/register-time">
-						<RegisterTime id={id} setId={setId} />
+						<RegisterTime
+							listColorTeme={listColorTeme}
+							setListColorTeme={setListColorTeme}
+						/>
 					</Route>
 				</Routes>
 			</div>

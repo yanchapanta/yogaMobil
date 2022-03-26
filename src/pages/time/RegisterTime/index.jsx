@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
 import './styles.scss';
 import unId from 'uniqid';
-const useStateLocalStorage = (localStorageKkey) => {
+const useStateWithLocalStorage = (localStorageKey) => {
 	const [value, setValue] = useState(
-		localStorage.getItem(localStorageKkey) || ''
+		localStorage.getItem(localStorageKey) || ''
 	);
-	useEffect(() => {
-		localStorage.setItem(localStorageKkey, value);
-	}, [value]);
-	return [value, setValue];
-};
 
-export default function RegisterTime({ id, setId }) {
+	useEffect(() => {
+		localStorage.setItem(localStorageKey, value);
+	}, [value]);
+
+	return [JSON.parse(value), setValue];
+};
+export default function RegisterTime({ listColorTeme, setListColorTeme }) {
 	const [start, setStart] = useState('');
 	const [end, setEnd] = useState('');
 	const [startHours, setstartHours] = useState('');
@@ -20,12 +21,10 @@ export default function RegisterTime({ id, setId }) {
 	const [endMinutes, setendMinutes] = useState('');
 	const [weekday, setWeekday] = useState('');
 	const [color, setColor] = useState('');
-	const [listColorTeme, setListColorTeme] = useStateLocalStorage(
-		'myValueListColorTeme'
-	);
-	// console.log(JSON.parse(localStorage.getItem('dbColorTheme')) || '');
-
+	const [listColorTemeStorage, setListColorTemeStorage] =
+		useStateWithLocalStorage('listColorTemeStorage');
 	const [modeEdition, setModeEdition] = useState(false);
+	const [id, setId] = useState('');
 	const [error, setError] = useState(false);
 
 	//mostrar edicion
@@ -45,7 +44,7 @@ export default function RegisterTime({ id, setId }) {
 	//editar tema
 	const handleEdit = (e) => {
 		e.preventDefault();
-		const newArry = listColorTeme.map((item) =>
+		const newArry = listColorTemeStorage.map((item) =>
 			item.id === id
 				? {
 						id: id,
@@ -58,7 +57,8 @@ export default function RegisterTime({ id, setId }) {
 				  }
 				: item
 		);
-		setListColorTeme(newArry);
+
+		setListColorTemeStorage(JSON.stringify(newArry));
 		setModeEdition(false);
 		//borrar campo
 		setStart('');
@@ -71,7 +71,6 @@ export default function RegisterTime({ id, setId }) {
 		setColor('');
 		setId('');
 	};
-
 	const addTeme = (eve) => {
 		eve.preventDefault();
 		if (!color.trim('')) {
@@ -99,71 +98,27 @@ export default function RegisterTime({ id, setId }) {
 			color,
 			weekday
 		};
-		// const [valueStart, setValueStart] = useStateLocalStorage('myValueStart');
-		// const onChangeStart = (eve) => {
-		// 	setValueStart(eve.target.value);
-		// };
-		// const [listColorTeme, setListColorTeme] = useState([]);
-		let newList = [...listColorTeme, newColorTeme];
-		newList = JSON.stringify(newList);
-		setListColorTeme(newList);
 
-		// //borrar campo
-		// setStart('');
-		// setEnd('');
-		// setstartHours('');
-		// setstartMinutes('');
-		// setendHours('');
-		// setendMinutes('');
-		// setWeekday('');
-		// setColor('');
-		// setId('');
+		// setListColorTeme([...listColorTemeStorage, newColorTeme]);
+		let dateStorage = [...listColorTemeStorage, newColorTeme];
+		dateStorage = JSON.stringify(dateStorage);
+		setListColorTemeStorage(dateStorage);
+		//borrar campo
+		setStart('');
+		setEnd('');
+		setstartHours('');
+		setstartMinutes('');
+		setendHours('');
+		setendMinutes('');
+		setWeekday('');
+		setColor('');
+		setId('');
 	};
 	const handleDelete = (idTheme) => {
-		const newArray = listColorTeme.filter((item) => item.id !== idTheme);
-		setListColorTeme(newArray);
-	};
-	const [valueWeekday, setValueWeekday] =
-		useStateLocalStorage('myValueWeekday');
-	const onChangeWeekday = (eve) => {
-		setValueWeekday(eve.target.value);
-	};
-	const [valueStart, setValueStart] = useStateLocalStorage('myValueStart');
-	const onChangeStart = (eve) => {
-		setValueStart(eve.target.value);
+		const newArray = listColorTemeStorage.filter((item) => item.id !== idTheme);
+		setListColorTemeStorage(JSON.stringify(newArray));
 	};
 
-	const [valueStartHours, setValueStartHours] =
-		useStateLocalStorage('myValueStartHours');
-	const onChangeStartHours = (value) => {
-		setValueStartHours(value);
-	};
-	const [valueStartMinutes, setValueStartMinutes] = useStateLocalStorage(
-		'myValueStartMinutes'
-	);
-	const onChangeStartMinutes = (value) => {
-		setValueStartMinutes(value);
-	};
-	const [valueEndHours, setValueEndHours] =
-		useStateLocalStorage('myValueEndHours');
-	const onChangeEndHours = (value) => {
-		setValueEndHours(value);
-	};
-	const [valueEndMinutes, setValueEndMinutes] =
-		useStateLocalStorage('myValueEndMinutes');
-	const onChangeEndMinutes = (value) => {
-		setValueEndMinutes(value);
-	};
-	const [valueEnd, setValueEnd] = useStateLocalStorage('myValueEnd');
-	const onChangeEnd = (eve) => {
-		setValueEnd(eve.target.value);
-	};
-	console.log('values', valueEnd);
-	const [valueColor, setValueColor] = useStateLocalStorage('myValueColor');
-	const onChangeColor = (eve) => {
-		setValueColor(eve.target.value);
-	};
-	console.log('values', valueColor);
 	return (
 		<div className="row">
 			{/* registro de ingreso */}
@@ -180,15 +135,13 @@ export default function RegisterTime({ id, setId }) {
 					) : (
 						<div></div>
 					)}
+
 					<div className="time-container">
 						<label className="time-row">
 							Weekday:
 							<select
 								name="weekday"
-								onChange={(eve) => {
-									setWeekday(eve.target.value);
-									onChangeWeekday(eve);
-								}}
+								onChange={(eve) => setWeekday(eve.target.value)}
 							>
 								<option value="none" selected disabled hidden>
 									--weekday--
@@ -244,9 +197,6 @@ export default function RegisterTime({ id, setId }) {
 									setstartHours(val.target.value.split(':')[0]);
 									setstartMinutes(val.target.value.split(':')[1]);
 									setStart(val.target.value);
-									onChangeStartHours(val.target.value.split(':')[0]);
-									onChangeStartMinutes(val.target.value.split(':')[1]);
-									onChangeStart(val);
 								}}
 								type="time"
 								step="600"
@@ -259,9 +209,6 @@ export default function RegisterTime({ id, setId }) {
 								onChange={(val) => {
 									setendHours(val.target.value.split(':')[0]);
 									setendMinutes(val.target.value.split(':')[1]);
-									onChangeEndHours(val.target.value.split(':')[0]);
-									onChangeEndMinutes(val.target.value.split(':')[1]);
-									onChangeEnd(val);
 									setEnd(val.target.value);
 								}}
 								type="time"
@@ -272,10 +219,7 @@ export default function RegisterTime({ id, setId }) {
 						<label className="time-row">
 							Color:
 							<input
-								onChange={(val) => {
-									setColor(val.target.value);
-									onChangeColor(val);
-								}}
+								onChange={(val) => setColor(val.target.value)}
 								type="color"
 								name="head"
 								value={color}
@@ -294,8 +238,8 @@ export default function RegisterTime({ id, setId }) {
 			<div className="col-8">
 				<h2>List color theme</h2>
 				<ul className="list-group">
-					{listColorTeme.length ? (
-						listColorTeme.map((item) => (
+					{listColorTemeStorage.length ? (
+						listColorTemeStorage.map((item) => (
 							<li key={item.id} className="list-item">
 								<div>
 									<strong>Day:</strong>
@@ -311,7 +255,7 @@ export default function RegisterTime({ id, setId }) {
 								</div>
 								<div>
 									<strong>Color:</strong>
-									{item.color}
+									<input type="color" value={item.color} disabled />
 								</div>
 								<div>
 									<button
