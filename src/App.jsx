@@ -62,7 +62,7 @@ function App() {
 
 		//colores
 		let colors = '';
-		if ((hours >= 16 && minute >= 30) || (hours <= 4 && minute <= 29)) {
+		if ((hours >= 16 && minute >= 30) || (hours <= 4 && minute <= 30)) {
 			colors = 'bg-main';
 		}
 		return colors;
@@ -159,6 +159,8 @@ function App() {
 		let startMinutes = colorChoose[0].startMinutes;
 		let endHours = colorChoose[0].endHours;
 		let endMinutes = colorChoose[0].endMinutes;
+		//16 30 a 4 30
+		//16 45
 		if (dayT === weekday) {
 			if (hours === startHours && minute > startMinutes) {
 				setMinOn(true);
