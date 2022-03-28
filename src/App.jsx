@@ -177,14 +177,14 @@ function App() {
 	};
 	return (
 		<Fragment>
-			<Main />
+			{/* <Main /> */}
 			<div
 				className={validateHours() + ' '}
 				style={{ background: handleColor() }}
 			>
-				<div>
+				{/* <div>
 					<h1>Hello, world! {isHoursfull}</h1>
-				</div>
+				</div> */}
 				<Routes>
 					<Route exact path="/">
 						<Home

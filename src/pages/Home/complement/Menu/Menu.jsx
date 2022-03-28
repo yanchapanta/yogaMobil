@@ -8,11 +8,14 @@ const Menu = ({ setClicklogin, setClicksignup, clicksignup }) => {
 	return (
 		<nav className="menu-phone container-1">
 			<div className="menu-phone-content ">
+		
 				<Icon
 					display="var(--hidden-desktop)"
 					src={images.menuHome}
 					alt="Home"
+					onClick={setClicklogin}
 				/>
+				
 				<Icon
 					display="var(--hidden-desktop)"
 					src={images.menuNotification}
@@ -52,7 +55,7 @@ const Menu = ({ setClicklogin, setClicksignup, clicksignup }) => {
 					</div>
 					{!clicksignup ? (
 						//boton de ingresar y de registro
-						<div className="menu-desktop-row">
+						<div className="menu-desktop-row ">
 							<button
 								onClick={(e) => setClicklogin(true)}
 								className="btn-signin2  hover d-none d-md-flex "
@@ -69,7 +72,7 @@ const Menu = ({ setClicklogin, setClicksignup, clicksignup }) => {
 					) : (
 						// boton tema usuario y boton usuario perfil y boton sign out
 						<div
-							className="col-4 justify-content-end d-flex"
+							className="col-4 justify-content-end d-flex d-none d-lg-flex"
 							style={{ gap: '1rem' }}
 						>
 							<Link to="/register-time">

@@ -122,7 +122,7 @@ export default function RegisterTime({ listColorTeme, setListColorTeme }) {
 	return (
 		<div className="row">
 			{/* registro de ingreso */}
-			<div className="col-4">
+			<div className="col-lg-4 ">
 				<h2>Register color theme</h2>
 				<form
 					onSubmit={
@@ -235,29 +235,29 @@ export default function RegisterTime({ listColorTeme, setListColorTeme }) {
 				</form>
 			</div>
 			{/* listado de temas */}
-			<div className="col-8">
+			<div className="col-lg-8">
 				<h2>List color theme</h2>
 				<ul className="list-group">
 					{listColorTemeStorage.length ? (
 						listColorTemeStorage.map((item) => (
 							<li key={item.id} className="list-item">
-								<div>
+								<div className='col d-sm-flex d-lg-flex flex-column flex-lg-row'>
 									<strong>Day:</strong>
 									{item.weekday}
 								</div>
-								<div>
+								<div className='col d-sm-flex d-lg-flex flex-column flex-lg-row'>
 									<strong>Start:</strong>
 									{item.startHours}:{item.startMinutes}
 								</div>
-								<div>
+								<div className='col d-sm-flex d-lg-flex flex-column flex-lg-row'>
 									<strong>End:</strong>
 									{item.endHours}:{item.endMinutes}
 								</div>
-								<div>
+								<div className='col d-sm-flex d-lg-flex flex-column flex-lg-row'>
 									<strong>Color:</strong>
 									<input type="color" value={item.color} disabled />
 								</div>
-								<div>
+								<div className='col d-sm-flex d-lg-flex flex-column flex-lg-row'>
 									<button
 										onClick={() => handleDelete(item.id)}
 										className="btn btn-danger mr-1"

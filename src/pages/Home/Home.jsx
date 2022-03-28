@@ -5,15 +5,28 @@ import React, { Fragment, useState } from 'react';
 import images from '../../assets/img/image';
 import Menu from './complement/Menu/Menu';
 import Login from '../Login/Login';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
-function Home({clicklogin,error,setEmail,setPassword,validateForm,setClicklogin,setClicksignup,clicksignup,modelogin,email,password,setModelogin,setError}) {
-
+function Home({
+	clicklogin,
+	error,
+	setEmail,
+	setPassword,
+	validateForm,
+	setClicklogin,
+	setClicksignup,
+	clicksignup,
+	modelogin,
+	email,
+	password,
+	setModelogin,
+	setError
+}) {
 	return (
 		<Fragment>
-			{(!clicklogin === true) ? (
+			{!clicklogin === true ? (
 				<div>
-					
 					<Menu
 						setClicklogin={setClicklogin}
 						setClicksignup={setClicksignup}
@@ -26,6 +39,38 @@ function Home({clicklogin,error,setEmail,setPassword,validateForm,setClicklogin,
 									<h2 className="title-1-text">Hi Jenny Wilson!</h2>
 									<h2 className="title-1-light-text">Good Morning</h2>
 								</div>
+								{clicksignup ? (
+									<div
+										display="var(--hidden-desktop)"
+										className="col-4 justify-content-end d-flex d-lg-none"
+										style={{ gap: '1rem' }}
+									>
+										<Link to="/register-time">
+											<img
+												className="icon-circle hover"
+												src={images.iconSun}
+												alt="sun"
+											/>
+										</Link>
+
+										<div
+										
+										 className="primary-nav hover">
+											<img
+												className="icon-circle"
+												src={images.User1}
+												alt="user"
+											/>
+											<nav className="primary-nav-user">
+												<div className="primary-nav-caja">
+													<span onClick={(e) => setClicksignup(false)}>
+														Sign out
+													</span>
+												</div>
+											</nav>
+										</div>
+									</div>
+								) : null}
 							</div>
 							<div className="row-icon mt-3">
 								<img
@@ -41,6 +86,7 @@ function Home({clicklogin,error,setEmail,setPassword,validateForm,setClicklogin,
 							</div>
 						</div>
 					</div>
+
 					<div className="container-1">
 						{/* titulo */}
 						<div className="col d-flex justify-content-between container-1">
