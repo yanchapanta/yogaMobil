@@ -9,7 +9,7 @@ const Register = () => {
 	const validateForm = () => {};
 	return (
 		<Fragment>
-			{/* // formulario login */}
+			
 			<div className="row d-flex justify-content-center mt-5">
 				<div className="col col-md-5 ">
 					<Title text="Register user" />

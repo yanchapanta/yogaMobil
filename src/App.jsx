@@ -13,6 +13,7 @@ import Login from './pages/Login/Login';
 import RegisterTime from './pages/time/RegisterTime';
 // import Interfaz from './pages/Interfaz';
 import Main from './reactUdemy/Main';
+import Register from './pages/Register/Register';
 
 function App() {
 	//LOGIN
@@ -228,6 +229,9 @@ function App() {
 							listColorTeme={listColorTeme}
 							setListColorTeme={setListColorTeme}
 						/>
+					</Route>
+					<Route path="/register">
+						<Register/>
 					</Route>
 				</Routes>
 			</div>
