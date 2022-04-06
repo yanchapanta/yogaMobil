@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> gh-pages
 /.pnp
 .pnp.js
 
