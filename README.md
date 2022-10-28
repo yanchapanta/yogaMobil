@@ -11,13 +11,12 @@ https://www.figma.com/file/O8DANPeLhWYCEQD0fn2mEn/Yoga-MobileAppCommunityCopy)?n
 
 ![miimagen](https://raw.githubusercontent.com/yanchapanta/yogaMobil/react-class-2022/src/assets/imgApp/homeLogin.png)
 
-![img]()
 
 ## Mi imagen principal phone
 
-![vistaphone](https://raw.githubusercontent.com/yanchapanta/yogaMobil/react-class-2022/src/assets/imgApp/homeLogin.png)
+![vistaphone](https://raw.githubusercontent.com/yanchapanta/yogaMobil/react-class-2022/src/assets/imgApp/mobil.png)
 
-![img2]()
+
 En el home principal, el usuario aun no esta logeado
 
 
@@ -224,11 +223,7 @@ import images from '../../assets/img/image';
 ```
 
 ### Vista de registro colores
-LIGHT
-![registroColore]()
 
-NIGHT
-![registroColoresNight]()
 
 Código entradas
 ```JSX
@@ -355,9 +350,9 @@ const handleDelete = (idTheme) => {
 	};
 ```
 MODO PHONE
-![registroColoresNight]()
+
 ### Los datos se almacenan en el localStorage
-![registroColoresNight]()
+
 Código función para guardar en localStorage
 ```js
 const useStateWithLocalStorage = (localStorageKey) => {
@@ -373,6 +368,6 @@ const useStateWithLocalStorage = (localStorageKey) => {
 };
 ```
 Fin de presentación
-![registroColoresNight]()
+
 Vista en dispositivo mobil
-![fin]()
+![fin](https://raw.githubusercontent.com/yanchapanta/yogaMobil/react-class-2022/src/assets/imgApp/mobil.png)
