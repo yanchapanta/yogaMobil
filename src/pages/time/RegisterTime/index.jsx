@@ -123,6 +123,7 @@ export default function RegisterTime({ listColorTeme, setListColorTeme }) {
 		<div className="row">
 			{/* registro de ingreso */}
 			<div className="col-lg-4 ">
+				hola mundo
 				<h2>Register color theme</h2>
 				<form
 					onSubmit={
